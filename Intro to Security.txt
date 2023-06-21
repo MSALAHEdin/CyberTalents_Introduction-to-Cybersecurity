@@ -1,0 +1,131 @@
+05) What are Cookies?
+
+Cookies are data that browsers store in small text files on your computer.
+
+Cookies were invented to solve the problem of "how to remember information about the user?". 
+
+Machine:Hint)we open inspect then we find support password but not admin then find out the cokies then modify support cokie to admin and refresh
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What are Hashing Functions?  
+Hashing functions are one-way functions that theoretically provide a unique output for every input. 
+
+Types of Hashing  
+MD5
+An MD5 hash function encodes a string of information and encodes it into a 128-bit fingerprint. MD5 is often used as a checksum to verify data integrity.
+However, due to its age, MD5 is also known to suffer from extensive hash collision vulnerabilities, but it’s still one of the most widely used algorithms in the world.
+
+SHA-2 
+SHA-2, developed by the National Security Agency (NSA), is a cryptographic hash function. SHA-2 includes significant changes from its predecessor, SHA-1. 
+The SHA-2 family consists of six hash functions with digests (hash values) that are 224, 256, 384 or 512 bits: SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256.
+
+String Hashing
+
+A string hash is a number or string generated using an algorithm that runs on text or data.
+echo -n word|md5sum
+echo -n word|sha1sum
+
+File Hashing
+
+File hashing is required in cybersecurity for many purposes like File verification for verifying the integrity of a computer file. 
+Or evidence during cyberattack investigations or might be another technical issue like faulty storage media, errors in transmission, and write errors during copying or moving, software bugs, and so on.
+Get-FileHash C:\Users\ma454\Downloads\path
+
+Machine:Hint)we had sha2 code but corrupted we correct it by delete false characters then decrypte it to get plain text after that convert this plain text to sha1 to get password.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What are Encoding and Decoding?
+Encoding:
+The process of converting a sequence of letters, characters, and any other special characters into a specialized format for transmission. 
+Decoding:
+It is the reverse of the encoding process.
+
+There are several encoding schemes that web applications use for their data encoding. As we know, HTTP and HTML protocols are text-based. 
+For that purpose, the different encoding schemes are used, ensuring that the mechanisms we mentioned will safely handle the unusual characters and the binary data which may appear.
+We use encoding in data communication and storage, encoding must not be used to transmit sensitive data.
+
+Encoding Schemes Types
+
+URL Encoding
+URLs can only be sent using the ASCII character set and there are instances when a URL contains special characters apart from ASCII characters, it needs to be encoded.
+Why is the URL encoding scheme used? It is used to encode any characters within the extended ASCII character set. In that case, they will be safely transmitted over HTTP.
+
+HTML Encoding 
+The main interest in encoding HTML when you’re attacking the web app for cross-site scripting vulnerabilities. 
+If the case where the application returns the user’s input unmodified in the response, that means it is probably vulnerable. Also, if the dangerous characters are encoded in the HTML, then it is safe.
+As with URL encoding, some characters in HTML have a specific semantic and should therefore be encoded if they need to be used without their semantics' implication.
+
+Base64 Encoding 
+It is used to safely represent the binary data and for encoding email attachments for the purpose of safe transmission over SMTP.
+Another usage of this scheme, it’s used when encoding user credentials in basic HTTP authentication.
+It uses 4 ASCII characters to encode 24-bits (3 bytes) of data. To encode, it splits up the three bytes into 4 6-bit numbers. A 6-bit number can represent 64 possible values. Each possible value corresponds to an ASCII character.
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What are Obfuscation & Deobfuscation?
+
+Obfuscation 
+The process of modifying the script to convert it to a difficult, harder-to-understand format, but will return the same result. There are several obfuscation methods hence that there are many tools for it.
+
+Deobfuscation 
+It is the reverse process of obfuscation, as it rewrites the script again from a very difficult to read to an understandable one. This can be done with many tools.
+
+Why do we use Obfuscation?
+There are many reasons why you may use obfuscation, here are some of them:
+    Prevent others from stealing their code 
+    Avoid attackers understanding the script functionalities and abusing it.
+    Bypassing WAFs and security detection systems from filtering or detecting your payloads.
+
+Javascript Obfuscation 
+There are several methods in JS obfuscation, one of them is to remove spaces, this method is called code minify, usually developers use this method as it reduces script file size.
+
+JSF 
+By this method, you can rewrite any JS script with just six characters []()!+
+
+Packer Obfuscation 
+In this one, all script text and symbols will be stored in a list or dictionary and will be restored and rebuilt again during the execution process.
+
+JS deobfuscation Tools 
+Instead of downloading and using deobfuscation tools on your machine, you can use them online.
+Here are some examples:
+    JStillery: This tool performs advanced JS deobfuscation via partial evaluation.
+    deobfuscate javascript 
+    Beautifier.io
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is XSS?
+Cross-Site Scripting is a web vulnerability that relies on the client side in which its purpose is to inject HTML (also called HTML injection) or to run JavaScript code in the user’s browser.
+
+XSS has several types: Reflected, Stored, and DOM-based XSS  
+
+Reflected XSS: it occurs when the user submits malicious data to a web application and his input data is echoed immediately on the web page where the browser processes it and triggers the attack .
+
+Stored XSS: it is similar to Reflected XSS however the malicious input is stored in the web application and can be called again .
+((e.g. malicious code in the comment section in a web application stored in the database and called again whenever the users try to see the comment section.))
+
+DOM-based: it is about injecting the malicious payload into the DOM which means the payload will live in the client-side environment, and the payload won’t reach the backend code. 
+
+Impact
+Cross-site scripting attacks can be used to achieve many goals.
+Some examples are:
+• Stealing user cookies/ session hijacking.
+• Controling the web browser.
+• Performing keylogging.
+
+Mitigation 
+You must not trust any user input data, and you have to filter and sanitize any special characters that might lead to this type of attack.
+In PHP there are two functions that can be used to escape input data. 
+htmlspecialchars() and htmlentities().
+
+The htmlspecialchars() changes the following special characters ',",&,<,> to ', ", &, <, and >. 
+The htmlentities() function is very similar to htmlspecialchars(), but differs in that it encodes all characters that have the equivalents of HTML entity.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
